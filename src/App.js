@@ -31,7 +31,7 @@ this.setState({counter: addC});
   decrement(i)  { 
     console.log("decrementing has occured");
     let c = [...this.state.counter];
-    c[i].counter--;
+    c[i]--;
     this.setState({ counter: c });
   }
 
@@ -41,14 +41,14 @@ this.setState({counter: addC});
     return (
       
       <div className= "main">
-          <button className= "add-counter" onClick= {this.addCounter.bind(this)}>Add counter</button>
+          <button className= "add-counter" onClick= {this.addCounter.bind(this)}>Add Counter</button>
         { this.state.counter.map((c, i) =>
           
             <div key={i} className="choices">
               <h1>{c}</h1>
 
               <button className="increase" onClick= {this.increment.bind(this, i)}>Increment</button>
-              <button className="decrease">Decrement</button>
+              <button className="decrease" onClick= {this.decrement.bind(this, i)}>Decrement</button>
             </div>
           
           
@@ -61,5 +61,4 @@ this.setState({counter: addC});
     }
     
     export default Counter;
-    // console.log(this.state.counter)
     
